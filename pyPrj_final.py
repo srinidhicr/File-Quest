@@ -6,6 +6,7 @@ from PIL import ImageTk ,Image
 disp= Tk()  #creating an object of tkinter frame
 disp.title('This Pc:')
 
+
 #Listing out drives
 def list_drives():
     driveList= [chr(x) + ':' for x in range(65, 90) if os.path.exists(chr(x) + ':')]
@@ -31,7 +32,7 @@ def list_desktop():
     downloadButton={}
     for x in desktoplist:
         myList.insert(END,x)
-    myList.pack(side=LEFT,fill=BOTH)
+    myList.pack(side=LEFT,fill=BOTH, expand = 5)
     scroll_bar.config(command=myList.yview)
     desktop.mainloop()
 
@@ -50,7 +51,7 @@ def list_documents():
         #downloadButton[x]=Button(download,text=x)
         myList.insert(END,x)
         #downloadButton[x].pack()
-    myList.pack(side=LEFT,fill=BOTH)
+    myList.pack(side=LEFT,fill=BOTH, expand = 5)
     scroll_bar.config(command=myList.yview)
     document.mainloop()
 
@@ -71,7 +72,7 @@ def list_downloads():
         #downloadButton[x]=Button(download,text=x)
         myList.insert(END,x)
         #downloadButton[x].pack()
-    myList.pack(side=LEFT,fill=BOTH)
+    myList.pack(side=LEFT,fill=BOTH, expand=5)
     scroll_bar.config(command=myList.yview)
     download.mainloop()
 

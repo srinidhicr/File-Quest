@@ -1,6 +1,6 @@
 # fileExplorer
 
-OVERVIEW:
+## OVERVIEW:
 
 Created a file explorer in python, using tkinter for the user interface. In this project, you can perform basic operations like
 
@@ -12,7 +12,7 @@ Created a file explorer in python, using tkinter for the user interface. In this
 
 It is basically a simulation of file explorer in python as in windows and linux systems.
 
-# modules used
+## modules used
 
 * tkinter
 * PIL 

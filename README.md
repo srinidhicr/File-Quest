@@ -7,8 +7,9 @@ Created a file explorer in python, using tkinter for the user interface. In this
 1. Creating a new file
 2. Renaming a file
 3. Listing the contents of the directory
-4. Deleting a file
-5. Sorting files based on size
+4. Navigating to different directories
+5. Deleting a file
+6. Sorting files based on size
 
 It is basically a simulation of file explorer in python as in windows and linux systems.
 

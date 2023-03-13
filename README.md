@@ -14,7 +14,7 @@ It is basically a simulation of file explorer in python as in windows and linux 
 
 # modules used
 
-*tkinter
-*PIL 
-*pathlib 
-*send2trash 
+* tkinter
+* PIL 
+* pathlib 
+* send2trash 

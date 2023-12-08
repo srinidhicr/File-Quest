@@ -1,4 +1,4 @@
-# fileExplorer
+# File Explorer
 
 ## OVERVIEW:
 

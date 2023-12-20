@@ -271,16 +271,16 @@ sort_size=False
 #Main Window
 window=tk.Tk()
 window.resizable(True, True)
-window.iconphoto(True,tk.PhotoImage(file="imgFolder/icon.png"))
+window.iconphoto(True,tk.PhotoImage(file="data/icon.png"))
 window.minsize(width=800, height=500)
 frame_up = tk.Frame(window, border=1,bg="blue")
 frame_up.pack(fill="x", side="top")
 
 #Importing Images
-folder_icon = tk.PhotoImage(file="imgFolder/icon_folder.png")
-file_icon = tk.PhotoImage(file="imgFolder/icon_file.png")
-home_icon = tk.PhotoImage(file="imgFolder/icon_home.png")
-up_icon = tk.PhotoImage(file="imgFolder/icon_up.png")
+folder_icon = tk.PhotoImage(file="data/icon_folder.png")
+file_icon = tk.PhotoImage(file="data/icon_file.png")
+home_icon = tk.PhotoImage(file="data/icon_home.png")
+up_icon = tk.PhotoImage(file="data/icon_up.png")
 frame_b = tk.Frame(frame_up, border=2, relief="groove", bg="blue")
 frame_b.pack(side="left")
 

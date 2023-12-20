@@ -1,3 +1,8 @@
+"""
+Title : File Explorer 
+Team Members : Harini, Srinithi
+"""
+
 import os,re,string,shutil
 import tkinter as tk
 from tkinter import ttk , simpledialog
@@ -56,12 +61,12 @@ def open_right_menu(event):
 #To Move to Previous folder
 def move_up():
     global curr_folder
-    up_path = entry.get().rsplit("\\", 1)
-    curr_folder = up_path[1]
-    if re.match(r"\w:$", up_path[0]) or up_path[0] == "":
-        update_files_folders(up_path[0] + "\\")
-    else:
-        update_files_folders(up_path[0])
+    current_path = entry.get()
+    up_path = os.path.dirname(current_path)
+    if os.path.isdir(up_path):
+        curr_folder = os.path.basename(up_path)
+        update_files_folders(up_path)
+
 
 #To create a copy of a file
 def copy():
@@ -209,18 +214,12 @@ def update_files_folders(dirname):
     elif dirname == "\\":
         window.title("Computer")
     else:
-            # Set title = folder name
-        if re.match(r"\w:\\$", dirname):
-            window.title(f"Disk ({dirname[0:2]})")
-        elif dirname == "\\":
-            window.title("Computer")
+        split_result = dirname.rsplit("\\", 1)
+        if len(split_result) > 1:
+            window.title(split_result[1])
         else:
-            split_result = dirname.rsplit("\\", 1)
-            if len(split_result) > 1:
-                window.title(split_result[1])
-            else:
-                # Handle the case where there is no backslash in the string
-                window.title(dirname)
+            # Handle the case where there is no backslash in the string
+            window.title(dirname)
 
     
     right_menu.entryconfig("Open", state="disabled")
@@ -283,16 +282,16 @@ sort_size=False
 #Main Window
 window=tk.Tk()
 window.resizable(True, True)
-window.iconphoto(True,tk.PhotoImage(file="data/icon.png"))
+window.iconphoto(True,tk.PhotoImage(file="imgFolder/icon.png"))
 window.minsize(width=800, height=500)
 frame_up = tk.Frame(window, border=1,bg="blue")
 frame_up.pack(fill="x", side="top")
 
 #Importing Images
-folder_icon = tk.PhotoImage(file="data/icon_folder.png")
-file_icon = tk.PhotoImage(file="data/icon_file.png")
-home_icon = tk.PhotoImage(file="data/icon_home.png")
-up_icon = tk.PhotoImage(file="data/icon_up.png")
+folder_icon = tk.PhotoImage(file="imgFolder/icon_folder.png")
+file_icon = tk.PhotoImage(file="imgFolder/icon_file.png")
+home_icon = tk.PhotoImage(file="imgFolder/icon_home.png")
+up_icon = tk.PhotoImage(file="imgFolder/icon_up.png")
 frame_b = tk.Frame(frame_up, border=2, relief="groove", bg="blue")
 frame_b.pack(side="left")
 

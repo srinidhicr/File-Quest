@@ -209,7 +209,19 @@ def update_files_folders(dirname):
     elif dirname == "\\":
         window.title("Computer")
     else:
-        window.title(dirname.rsplit("\\", 1)[1])
+            # Set title = folder name
+        if re.match(r"\w:\\$", dirname):
+            window.title(f"Disk ({dirname[0:2]})")
+        elif dirname == "\\":
+            window.title("Computer")
+        else:
+            split_result = dirname.rsplit("\\", 1)
+            if len(split_result) > 1:
+                window.title(split_result[1])
+            else:
+                # Handle the case where there is no backslash in the string
+                window.title(dirname)
+
     
     right_menu.entryconfig("Open", state="disabled")
     right_menu.entryconfig("Copy", state="disabled")
